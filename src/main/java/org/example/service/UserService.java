@@ -9,4 +9,7 @@ public interface UserService {
     List<UserEntity> getAllUsers();
 
     void addUser(User user);
+
+    void deleteById(Long id);
+    User findByUserName(String UserName);
 }
