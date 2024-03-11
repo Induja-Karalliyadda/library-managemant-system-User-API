@@ -1,17 +1,24 @@
 package org.example.controller;
 
+import lombok.RequiredArgsConstructor;
+import org.example.dto.User;
 import org.example.entity.UserEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.example.service.UserService;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@RequiredArgsConstructor
 public class UserController {
-    @GetMapping
+    final UserService service;
+    @GetMapping("/get-all-users")
     public List<UserEntity> getAllUser(){
-
+    return service.getAllUsers();
+    }
+    @PostMapping("/add-user")
+    public void addUser(@RequestBody User user){
+        service.addUser(user);
     }
 }
