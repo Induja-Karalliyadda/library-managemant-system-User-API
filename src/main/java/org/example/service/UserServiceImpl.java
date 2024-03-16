@@ -35,4 +35,9 @@ public class UserServiceImpl implements UserService {
     public User findByUserName(String UserName) {
         return mapper.map(repository.findByUserName(UserName), User.class);
     }
+
+    @Override
+    public boolean isExsistUser(String userName) {
+        return repository.existsByUserName(userName);
+    }
 }
