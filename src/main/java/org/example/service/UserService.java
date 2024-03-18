@@ -1,5 +1,6 @@
 package org.example.service;
 
+import org.example.dto.Login;
 import org.example.dto.User;
 import org.example.entity.UserEntity;
 
@@ -14,4 +15,9 @@ public interface UserService {
     User findByUserName(String UserName);
 
     boolean isExsistUser(String userName);
+
+    interface LoginService {
+        void insertLoginData(Login login);
+
+    }
 }
