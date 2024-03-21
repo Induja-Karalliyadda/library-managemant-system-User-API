@@ -20,7 +20,8 @@ public class UserController {
 
     @GetMapping("/get-all-users")
     public List<UserEntity> getAllUser(){
-    return service.getAllUsers();
+
+        return service.getAllUsers();
     }
     @PostMapping("/add-user")
     public void addUser(@RequestBody User user){
